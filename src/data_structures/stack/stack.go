@@ -20,3 +20,15 @@ func (stack *Stack) Push(element int) {
 	stack.elements = append(stack.elements, element)
 }
 
+// Pop removes an element from the top of
+// the stack
+func (stack *Stack) Pop() (int, error) {
+	if stack.IsEmpty() {
+		return 0, errors.New("cannot pop from empty stack")
+	}
+
+	top := stack.elements[len(stack.elements)-1]
+	stack.elements = stack.elements[:len(stack.elements)-1]
+	return top, nil
+}
+
