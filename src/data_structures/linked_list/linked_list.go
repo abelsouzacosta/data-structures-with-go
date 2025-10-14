@@ -1,3 +1,7 @@
+package linkedlist
+
+import "fmt"
+
 type LinkedList struct {
 	head *Node
 	tail *Node
