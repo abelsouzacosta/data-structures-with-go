@@ -74,3 +74,19 @@ func (stack *Stack) Max() (int, error) {
 	return max, nil
 }
 
+// Min return the minimum value within the stack
+func (stack *Stack) Min() (int, error) {
+	if stack.IsEmpty() {
+		return 0, errors.New("cannot get min from empty stack")
+	}
+
+	min := math.MaxInt
+
+	for _, element := range stack.elements {
+		if element < min {
+			min = element
+		}
+	}
+
+	return min, nil
+}
