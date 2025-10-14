@@ -32,3 +32,13 @@ func (stack *Stack) Pop() (int, error) {
 	return top, nil
 }
 
+// Peek returns the element at the top of the stack
+// without removing it
+func (stack *Stack) Peek() (int, error) {
+	if stack.IsEmpty() {
+		return 0, errors.New("cannot peek from empty stack")
+	}
+	top := stack.elements[len(stack.elements)-1]
+	return top, nil
+}
+
