@@ -9,3 +9,9 @@ func New() *Stack {
 	return &Stack{elements: []int{}}
 }
 
+// IsEmpty Checks if the stack is empty
+// not allowing to remove elements from a empty stack
+func (stack *Stack) IsEmpty() bool {
+	return len(stack.elements) == 0
+}
+
