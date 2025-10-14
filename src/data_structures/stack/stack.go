@@ -1,6 +1,11 @@
 // Package stack Holds the implementation of a Stack Data Structure
 package stack
 
+import (
+	"errors"
+	"fmt"
+)
+
 type Stack struct {
 	elements []int
 }
