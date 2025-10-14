@@ -4,6 +4,7 @@ package stack
 import (
 	"errors"
 	"fmt"
+	"math"
 )
 
 type Stack struct {
