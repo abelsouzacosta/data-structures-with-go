@@ -42,3 +42,12 @@ func (stack *Stack) Peek() (int, error) {
 	return top, nil
 }
 
+func (stack *Stack) Print() {
+	if stack.IsEmpty() {
+		fmt.Println("empty stack")
+	}
+
+	for _, element := range stack.elements {
+		fmt.Printf("%d\n", element)
+	}
+}
