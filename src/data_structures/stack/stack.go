@@ -56,3 +56,21 @@ func (stack *Stack) Print() {
 		fmt.Printf("%d\n", element)
 	}
 }
+
+// Max return the maximum value within the stack
+func (stack *Stack) Max() (int, error) {
+	if stack.IsEmpty() {
+		return 0, errors.New("cannot get max element from empty stack")
+	}
+
+	max := 0
+
+	for _, element := range stack.elements {
+		if element > max {
+			max = element
+		}
+	}
+
+	return max, nil
+}
+
