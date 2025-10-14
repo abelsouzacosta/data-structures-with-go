@@ -6,3 +6,8 @@ type Node struct {
 	next *Node
 }
 
+// setData defines the data that the Node holds
+func (node *Node) setData(data int) {
+	node.data = data
+}
+
