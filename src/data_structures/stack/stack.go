@@ -15,3 +15,8 @@ func (stack *Stack) IsEmpty() bool {
 	return len(stack.elements) == 0
 }
 
+// Push inserts an element at the top of the stack
+func (stack *Stack) Push(element int) {
+	stack.elements = append(stack.elements, element)
+}
+
