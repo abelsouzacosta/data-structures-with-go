@@ -32,3 +32,19 @@ func (list *LinkedList) InsertAtHead(data int) {
 		list.tail = node
 	}
 }
+
+func (list *LinkedList) Print() {
+	if list.IsEmpty() {
+		fmt.Print("empty list")
+	}
+
+	current := list.head
+	for current != nil {
+		if current.next == nil {
+			fmt.Printf("%d\n", current.data)
+		} else {
+			fmt.Printf("%d -> ", current.data)
+		}
+		current = current.next
+	}
+}
