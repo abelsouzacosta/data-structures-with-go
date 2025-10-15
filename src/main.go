@@ -11,6 +11,10 @@ func main() {
 	l.InsertAtHead(4)
 	l.InsertAtHead(5)
 	l.InsertAtHead(6)
+	l.InsertAtTail(7)
+	l.InsertAtTail(8)
+	l.InsertAtTail(9)
+	l.InsertAtHead(10)
 
 	l.Print()
 }
