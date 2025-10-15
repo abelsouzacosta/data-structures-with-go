@@ -37,6 +37,32 @@ func (list *LinkedList) InsertAtHead(data int) {
 	}
 }
 
+/*
+* InsertAtTail will insert a element in the tail of the list
+*
+* Creates a node and checks if the list is not empty
+* then if the list is not empty it captures the current tail
+* into a variable called oldTail and then updates this old tail
+* next reference with the new node created, then points the tail list
+* to the new node
+*
+* If the list is empty then both tail and head should point to the
+* new node
+ */
+func (list *LinkedList) InsertAtTail(data int) {
+	node := &Node{data: data, next: nil}
+
+	if !list.IsEmpty() {
+		oldTail := list.tail
+		oldTail.next = node
+		list.tail = node
+		return
+	}
+
+	list.tail = node
+	list.head = node
+}
+
 func (list *LinkedList) Print() {
 	if list.IsEmpty() {
 		fmt.Print("empty list")
