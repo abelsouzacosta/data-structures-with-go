@@ -33,3 +33,15 @@ func (list *DoublyLinkedList) InsertAtHead(data int) {
 	list.head = node
 }
 
+func (list *DoublyLinkedList) InsertAtTail(data int) {
+	node := &Node{data: data}
+	if list.isEmpty() {
+		list.insertAtEmptyList(data)
+		return
+	}
+	oldTail := list.tail
+	oldTail.next = node
+	node.previous = oldTail
+	list.tail = node
+}
+
