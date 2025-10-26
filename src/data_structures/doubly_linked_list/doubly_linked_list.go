@@ -45,3 +45,26 @@ func (list *DoublyLinkedList) InsertAtTail(data int) {
 	list.tail = node
 }
 
+func (list *DoublyLinkedList) InsertAfterElement(data, reference int) {
+	node := &Node{data: data}
+	if list.isEmpty() {
+		list.insertAtEmptyList(data)
+		return
+	}
+	current := list.head
+	for current != nil && current.data != reference {
+		current = current.next
+	}
+	if current == nil {
+		return // reference not found in the list
+	}
+	node.next = current.next
+	current.next = node
+	node.previous = current
+	if node.next != nil {
+		node.next.previous = node
+	} else {
+		list.tail = node
+	}
+}
+
