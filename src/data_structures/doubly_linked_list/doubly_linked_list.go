@@ -83,3 +83,17 @@ func (list *DoublyLinkedList) DeleteAtHead() {
 	list.head.previous = nil
 }
 
+func (list *DoublyLinkedList) Print() {
+	if list.isEmpty() {
+		fmt.Println("[]")
+	}
+	current := list.head
+	for current != nil {
+		if current.next == nil {
+			fmt.Printf("%d\n", current.data)
+		} else {
+			fmt.Printf("%d <-> ", current.data)
+		}
+		current = current.next
+	}
+}
