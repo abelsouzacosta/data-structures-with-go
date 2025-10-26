@@ -15,3 +15,9 @@ func (list *DoublyLinkedList) isEmpty() bool {
 	return list.tail == nil
 }
 
+func (list *DoublyLinkedList) insertAtEmptyList(data int) {
+	node := &Node{data: data}
+	list.head = node
+	list.tail = node
+}
+
