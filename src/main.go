@@ -11,5 +11,7 @@ func main() {
 	dl.InsertAtHead(4)
 	dl.InsertAtTail(1)
 	dl.InsertAfterElement(2, 3)
+	dl.DeleteAtHead() // removes 4
+	dl.DeleteAtTail() // removes 1
 	dl.Print()
 }
