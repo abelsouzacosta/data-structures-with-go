@@ -83,6 +83,21 @@ func (list *DoublyLinkedList) DeleteAtHead() {
 	list.head.previous = nil
 }
 
+func (list *DoublyLinkedList) DeleteAtTail() {
+	if list.isEmpty() {
+		return
+	}
+
+	if list.head == list.tail {
+		list.head = nil
+		list.tail = nil
+		return
+	}
+	oldTail := list.tail
+	oldTail.previous.next = nil
+	list.tail = oldTail.previous
+}
+
 func (list *DoublyLinkedList) Print() {
 	if list.isEmpty() {
 		fmt.Println("[]")
