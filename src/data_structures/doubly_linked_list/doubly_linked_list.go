@@ -68,3 +68,18 @@ func (list *DoublyLinkedList) InsertAfterElement(data, reference int) {
 	}
 }
 
+func (list *DoublyLinkedList) DeleteAtHead() {
+	if list.isEmpty() {
+		return // cannot remove from an empty list
+	}
+	// list has only one element
+	if list.head == list.tail {
+		list.head = nil
+		list.tail = nil
+		return
+	}
+	oldHead := list.head
+	list.head = oldHead.next
+	list.head.previous = nil
+}
+
