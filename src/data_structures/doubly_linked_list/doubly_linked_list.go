@@ -7,3 +7,7 @@ type DoublyLinkedList struct {
 	tail *Node
 }
 
+func New() *DoublyLinkedList {
+	return &DoublyLinkedList{head: nil, tail: nil}
+}
+
