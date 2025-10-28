@@ -24,15 +24,12 @@ func (list *LinkedList) InsertAtHead(data int) {
 
 func (list *LinkedList) InsertAtTail(data int) {
 	node := &Node{data: data}
-
+	// if tail is nil, it means that the list is empty
 	if list.tail == nil {
-		list.head = node
-		list.tail = node
+		list.InsertAtHead(data)
 		return
 	}
-
-	oldTail := list.tail
-	oldTail.next = node
+	list.tail.next = node
 	list.tail = node
 }
 
