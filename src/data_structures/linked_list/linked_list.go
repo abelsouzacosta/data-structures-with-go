@@ -19,12 +19,7 @@ func (list *LinkedList) InsertAtHead(data int) {
 	// if the list is empty then also updates the tail
 	if list.tail == nil {
 		list.tail = node
-		return
 	}
-
-	oldHead := list.head
-	node.next = oldHead
-	list.head = node
 }
 
 func (list *LinkedList) InsertAtTail(data int) {
