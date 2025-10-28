@@ -37,13 +37,11 @@ func (list *LinkedList) DeleteFromHead() {
 	if list.head == nil {
 		return
 	}
-
 	if list.head.next == nil {
 		list.head = nil
 		list.tail = nil
 		return
 	}
-
 	list.head = list.head.next
 }
 
