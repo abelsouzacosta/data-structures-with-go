@@ -13,4 +13,6 @@ func main() {
 	ll.Print()
 	ll.DeleteFromTail()
 	ll.Print()
+	ll.InsertAfterElement(10, 5)
+	ll.Print()
 }
