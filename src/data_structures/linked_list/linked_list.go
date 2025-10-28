@@ -54,6 +54,23 @@ func (list *LinkedList) DeleteFromHead() {
 	list.head = list.head.next
 }
 
+func (list *LinkedList) DeleteFromTail() {
+	if list.tail == nil {
+		return
+	}
+
+	if list.head.next == nil {
+		list.head = nil
+		list.tail = nil
+		return
+	}
+
+	current := list.head
+	for current.next != list.tail {
+		current = current.next
+	}
+	current.next = nil
+	list.tail = current
 }
 
 func (list *LinkedList) Print() {
