@@ -1,17 +1,16 @@
 package main
 
-import (
-	doublylinkedlist "github.com/abelsouzacosta/data-structures-with-go/src/data_structures/doubly_linked_list"
-)
+import linkedlist "github.com/abelsouzacosta/data-structures-with-go/src/data_structures/linked_list"
 
 func main() {
-	dl := doublylinkedlist.New()
-
-	dl.InsertAtHead(3)
-	dl.InsertAtHead(4)
-	dl.InsertAtTail(1)
-	dl.InsertAfterElement(2, 3)
-	dl.DeleteAtHead() // removes 4
-	dl.DeleteAtTail() // removes 1
-	dl.Print()
+	ll := linkedlist.New()
+	ll.InsertAtHead(3)
+	ll.InsertAtHead(4)
+	ll.InsertAtTail(5)
+	ll.InsertAtTail(6)
+	ll.Print()
+	ll.DeleteFromHead()
+	ll.Print()
+	ll.DeleteFromTail()
+	ll.Print()
 }
