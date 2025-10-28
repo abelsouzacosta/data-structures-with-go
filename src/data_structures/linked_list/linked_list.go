@@ -1,3 +1,4 @@
+// Package linkedlist deals with singly linked lists
 package linkedlist
 
 import "fmt"
@@ -12,14 +13,17 @@ func New() *LinkedList {
 }
 
 func (list *LinkedList) InsertAtHead(data int) {
-	node := &Node{data: data, next: list.head}
-	list.head = node
+	node := &Node{data: data}
 
-	// if there's no tail, then the list is empty
-	// and the first node is the last node
-	if list.tail == nil {
+	if list.head == nil {
+		list.head = node
 		list.tail = node
+		return
 	}
+
+	oldHead := list.head
+	node.next = oldHead
+	list.head = node
 }
 
 func (list *LinkedList) InsertAtTail(data int) {
