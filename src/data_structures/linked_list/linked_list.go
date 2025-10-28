@@ -27,15 +27,16 @@ func (list *LinkedList) InsertAtHead(data int) {
 }
 
 func (list *LinkedList) InsertAtTail(data int) {
-	node := &Node{data: data, next: nil}
+	node := &Node{data: data}
 
-	if !list.IsEmpty() {
-		oldTail := list.tail
-		oldTail.next = node
+	if list.tail == nil {
+		list.head = node
 		list.tail = node
 		return
 	}
 
+	oldTail := list.tail
+	oldTail.next = node
 	list.tail = node
 	list.head = node
 }
