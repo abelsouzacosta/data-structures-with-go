@@ -46,20 +46,21 @@ func (list *LinkedList) DeleteFromHead() {
 }
 
 func (list *LinkedList) DeleteFromTail() {
+	// list is empty
 	if list.tail == nil {
 		return
 	}
-
+	// list is unary
 	if list.head.next == nil {
 		list.head = nil
 		list.tail = nil
 		return
 	}
-
 	current := list.head
 	for current.next != list.tail {
-		current = current.next
+		current = current.next // moves ahead in the list
 	}
+	// updates the next reference to a nil value
 	current.next = nil
 	list.tail = current
 }
