@@ -38,7 +38,7 @@ func (list *LinkedList) InsertAtTail(data int) {
 	oldTail := list.tail
 	oldTail.next = node
 	list.tail = node
-	list.head = node
+}
 
 func (list *LinkedList) DeleteFromHead() {
 	if list.head == nil {
