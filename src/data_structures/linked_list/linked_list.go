@@ -33,6 +33,25 @@ func (list *LinkedList) InsertAtTail(data int) {
 	list.tail = node
 }
 
+func (list *LinkedList) InsertAfterElement(data, reference int) {
+	node := &Node{data: data}
+	if list.head == nil {
+		return
+	}
+	current := list.head
+	for current != nil && current.data != reference {
+		current = current.next // moves forward until reference
+	}
+	if current == nil {
+		return // reference not found in the list
+	}
+	node.next = current.next
+	current.next = node
+	if current == list.tail {
+		list.tail = node
+	}
+}
+
 func (list *LinkedList) DeleteFromHead() {
 	if list.head == nil {
 		return
