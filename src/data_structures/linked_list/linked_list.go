@@ -13,10 +13,11 @@ func New() *LinkedList {
 }
 
 func (list *LinkedList) InsertAtHead(data int) {
-	node := &Node{data: data}
-
-	if list.head == nil {
-		list.head = node
+	// node is created with the head as it next reference
+	node := &Node{data: data, next: list.head}
+	list.head = node
+	// if the list is empty then also updates the tail
+	if list.tail == nil {
 		list.tail = node
 		return
 	}
