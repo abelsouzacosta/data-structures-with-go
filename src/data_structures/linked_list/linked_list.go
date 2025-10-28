@@ -39,6 +39,21 @@ func (list *LinkedList) InsertAtTail(data int) {
 	oldTail.next = node
 	list.tail = node
 	list.head = node
+
+func (list *LinkedList) DeleteFromHead() {
+	if list.head == nil {
+		return
+	}
+
+	if list.head.next == nil {
+		list.head = nil
+		list.tail = nil
+		return
+	}
+
+	list.head = list.head.next
+}
+
 }
 
 func (list *LinkedList) Print() {
