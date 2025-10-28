@@ -74,8 +74,8 @@ func (list *LinkedList) DeleteFromTail() {
 }
 
 func (list *LinkedList) Print() {
-	if list.IsEmpty() {
-		fmt.Print("empty list")
+	if list.head == nil {
+		fmt.Printf("[]")
 	}
 
 	current := list.head
