@@ -196,6 +196,20 @@ func (list *LinkedList) DeepCopy(origin LinkedList) {
 	}
 }
 
+func (list *LinkedList) PrintAddresses() {
+	if list.head == nil {
+		return
+	}
+	fmt.Println("=================")
+	fmt.Println("Printing Indexes")
+	fmt.Println("=================")
+	current := list.head
+	for current != nil {
+		fmt.Printf("%p\n", current)
+		current = current.next
+	}
+}
+
 func (list *LinkedList) Print() {
 	if list.head == nil {
 		fmt.Printf("[]")
