@@ -84,6 +84,33 @@ func (list *LinkedList) DeleteFromTail() {
 	list.tail = current
 }
 
+func (list *LinkedList) DeleteElement(reference int) {
+	if list.head == nil {
+		return
+	}
+	if list.head.next == nil {
+		return
+	}
+	if list.head.data == reference {
+		list.DeleteFromHead()
+		return
+	}
+	if list.tail.data == reference {
+		list.DeleteFromTail()
+		return
+	}
+	current := list.head
+	for current != nil && current.next != nil && current.next.data != reference {
+		current = current.next
+	}
+	if current == nil || current.next == nil {
+		return // reference not found in the list
+	}
+	// found node
+	nodeToDelete := current.next
+	current.next = nodeToDelete.next
+}
+
 func (list *LinkedList) Print() {
 	if list.head == nil {
 		fmt.Printf("[]")
