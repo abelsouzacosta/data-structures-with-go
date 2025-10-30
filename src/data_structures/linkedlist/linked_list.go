@@ -111,6 +111,25 @@ func (list *LinkedList) DeleteElement(reference int) {
 	current.next = nodeToDelete.next
 }
 
+func (list *LinkedList) ReverseList() {
+	// the list is empty or unary
+	if list.head == nil || list.head.next == nil {
+		return
+	}
+	oldHead := list.head
+	current := list.head
+	var previous *Node = nil
+	var next *Node = nil
+	for current != nil {
+		next = current.next
+		current.next = previous
+		previous = current
+		current = next
+	}
+	list.head = previous
+	list.tail = oldHead
+}
+
 func (list *LinkedList) Print() {
 	if list.head == nil {
 		fmt.Printf("[]")
