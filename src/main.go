@@ -21,4 +21,9 @@ func main() {
 	fmt.Printf("at position 3 we have: %d\n", ll.Get(3))
 	ll.Set(2, 1000)
 	ll.Print()
+	newList := linkedlist.New()
+	newList.InsertAtHead(2)
+	newList.InsertAtTail(3)
+	ll.Concatenate(*newList)
+	ll.Print()
 }
