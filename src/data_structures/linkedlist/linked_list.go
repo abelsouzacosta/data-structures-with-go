@@ -149,6 +149,24 @@ func (list *LinkedList) Get(index int) int {
 	return 0 // not found in the list
 }
 
+func (list *LinkedList) Set(index, data int) {
+	if list.head == nil {
+		return
+	}
+	if list.head.next == nil {
+		list.head.data = data
+	}
+	current := list.head
+	counter := 0
+	for current != nil {
+		if counter == index {
+			current.data = data
+		}
+		current = current.next
+		counter += 1
+	}
+}
+
 func (list *LinkedList) Print() {
 	if list.head == nil {
 		fmt.Printf("[]")
