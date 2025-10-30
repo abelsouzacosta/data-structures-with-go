@@ -1,6 +1,10 @@
 package main
 
-import linkedlist "github.com/abelsouzacosta/data-structures-with-go/src/data_structures/linkedlist"
+import (
+	"fmt"
+
+	linkedlist "github.com/abelsouzacosta/data-structures-with-go/src/data_structures/linkedlist"
+)
 
 func main() {
 	ll := linkedlist.New()
@@ -14,4 +18,5 @@ func main() {
 	ll.Print()
 	ll.ReverseList()
 	ll.Print()
+	fmt.Printf("at position 3 we have: %d", ll.Get(3))
 }
