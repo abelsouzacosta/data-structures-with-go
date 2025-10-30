@@ -130,6 +130,25 @@ func (list *LinkedList) ReverseList() {
 	list.tail = oldHead
 }
 
+func (list *LinkedList) Get(index int) int {
+	if list.head == nil {
+		return 0
+	}
+	if list.head.next == nil {
+		return list.head.data
+	}
+	current := list.head
+	counter := 0
+	for current != nil {
+		if counter == index {
+			return current.data
+		}
+		current = current.next
+		counter += 1
+	}
+	return 0 // not found in the list
+}
+
 func (list *LinkedList) Print() {
 	if list.head == nil {
 		fmt.Printf("[]")
