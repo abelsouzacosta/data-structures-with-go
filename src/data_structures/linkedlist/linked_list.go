@@ -196,6 +196,26 @@ func (list *LinkedList) DeepCopy(origin LinkedList) {
 	}
 }
 
+func (list *LinkedList) RemoveDuplicates() {
+	if list.head == nil || list.head.next == nil {
+		return
+	}
+	// keep track of the previous node
+	current := list.head
+	for current != nil {
+		runner := current
+		// stops in the last node
+		for runner.next != nil {
+			if runner.next.data == current.data {
+				runner.next = runner.next.next
+			} else {
+				runner = runner.next
+			}
+		}
+		current = current.next
+	}
+}
+
 func (list *LinkedList) PrintAddresses() {
 	if list.head == nil {
 		return
