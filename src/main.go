@@ -1,6 +1,6 @@
 package main
 
-import linkedlist "github.com/abelsouzacosta/data-structures-with-go/src/data_structures/linked_list"
+import linkedlist "github.com/abelsouzacosta/data-structures-with-go/src/data_structures/linkedlist"
 
 func main() {
 	ll := linkedlist.New()
@@ -11,5 +11,7 @@ func main() {
 	ll.InsertAfterElement(10, 5)
 	ll.Print()
 	ll.DeleteElement(3)
+	ll.Print()
+	ll.ReverseList()
 	ll.Print()
 }
