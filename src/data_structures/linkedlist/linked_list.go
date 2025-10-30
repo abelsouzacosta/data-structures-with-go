@@ -167,6 +167,16 @@ func (list *LinkedList) Set(index, data int) {
 	}
 }
 
+func (list *LinkedList) Concatenate(listToConcatenate LinkedList) {
+	if list.head == nil {
+		list.head = listToConcatenate.head
+		list.tail = listToConcatenate.tail
+		return
+	}
+	list.tail.next = listToConcatenate.head
+	list.tail = listToConcatenate.tail
+}
+
 func (list *LinkedList) Print() {
 	if list.head == nil {
 		fmt.Printf("[]")
