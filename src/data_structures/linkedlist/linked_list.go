@@ -177,6 +177,14 @@ func (list *LinkedList) Concatenate(listToConcatenate LinkedList) {
 	list.tail = listToConcatenate.tail
 }
 
+func (list *LinkedList) ShallowCopy(origin LinkedList) {
+	if origin.head == nil {
+		return
+	}
+	list.head = origin.head
+	list.tail = origin.tail
+}
+
 func (list *LinkedList) Print() {
 	if list.head == nil {
 		fmt.Printf("[]")
