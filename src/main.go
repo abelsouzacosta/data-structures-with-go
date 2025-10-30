@@ -8,11 +8,8 @@ func main() {
 	ll.InsertAtHead(4)
 	ll.InsertAtTail(5)
 	ll.InsertAtTail(6)
-	ll.Print()
-	ll.DeleteFromHead()
-	ll.Print()
-	ll.DeleteFromTail()
-	ll.Print()
 	ll.InsertAfterElement(10, 5)
+	ll.Print()
+	ll.DeleteElement(3)
 	ll.Print()
 }
