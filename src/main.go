@@ -18,5 +18,7 @@ func main() {
 	ll.Print()
 	ll.ReverseList()
 	ll.Print()
-	fmt.Printf("at position 3 we have: %d", ll.Get(3))
+	fmt.Printf("at position 3 we have: %d\n", ll.Get(3))
+	ll.Set(2, 1000)
+	ll.Print()
 }
