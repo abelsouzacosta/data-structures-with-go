@@ -185,6 +185,17 @@ func (list *LinkedList) ShallowCopy(origin LinkedList) {
 	list.tail = origin.tail
 }
 
+func (list *LinkedList) DeepCopy(origin LinkedList) {
+	if origin.head == nil {
+		return
+	}
+	current := origin.head
+	for current != nil {
+		list.InsertAtTail(current.data)
+		current = current.next
+	}
+}
+
 func (list *LinkedList) Print() {
 	if list.head == nil {
 		fmt.Printf("[]")
