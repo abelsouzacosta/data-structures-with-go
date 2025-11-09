@@ -130,6 +130,30 @@ func (list *LinkedList) ReverseList() {
 	list.tail = oldHead
 }
 
+func (list *LinkedList) ReverseFirst(positions uint8) {
+	if positions == 0 || list.head == nil || list.head.next == nil {
+		return
+	}
+	current := list.head
+	blockTail := list.head
+	var previous *Node = nil
+	var next *Node = nil
+	var accumulator uint8 = 0
+	for current != nil && accumulator < positions {
+		next = current.next
+		current.next = previous
+		previous = current
+		current = next
+		accumulator++
+	}
+
+	if next != nil {
+		blockTail.next = next
+	}
+
+	list.head = previous
+}
+
 func (list *LinkedList) Get(index int) int {
 	if list.head == nil {
 		return 0
