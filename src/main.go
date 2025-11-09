@@ -20,4 +20,12 @@ func main() {
 	fmt.Println("Removing duplicates...")
 	ll.RemoveDuplicates()
 	ll.Print()
+
+	fmt.Println("Reversing the entire list")
+	ll.ReverseList()
+	ll.Print()
+
+	fmt.Println("Reversing first 2 postitions")
+	ll.ReverseFirst(2)
+	ll.Print()
 }
