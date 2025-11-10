@@ -147,8 +147,19 @@ func (list *LinkedList) ReverseFirst(positions uint8) {
 		accumulator++
 	}
 
+	// Case of partial reversion of the list
+	// is not necessary to update the list tail
+	// then we set the next element of the tail
+	// of the block reversed to be the next element in the
+	// original remaining list
 	if next != nil {
 		blockTail.next = next
+	} else {
+		// full reversion of the list
+		// we must update the tail of the list in order
+		// to keep list's integrity
+		list.tail = blockTail
+		blockTail.next = nil
 	}
 
 	list.head = previous
