@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	linkedlist "github.com/abelsouzacosta/data-structures-with-go/src/data_structures/linkedlist"
+	linkedlist "github.com/abelsouzacosta/data-structures-with-go/src/datastructures/linkedlist"
 )
 
 func main() {
